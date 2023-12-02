@@ -10,13 +10,11 @@ let coup = 0;
 let nombreChoisi;
 // Etape 3 - Générer un nombre aléatoire entre 0 et 1000
 let randomNumber = Math.floor(Math.random() * 1001);
-
+console.log(randomNumber);
 // Etape 6 - Créer la fonction vérifier
 function verifier(nombre) {
-    let instruction = document.createElement("div");
-  
 
-    console.log(instruction);
+    let instruction = document.createElement("div");
 
     if (nombre < randomNumber) {
         // c'est + 
@@ -38,12 +36,11 @@ function verifier(nombre) {
         instruction.textContent = "#"+ coup + "("+ nombre +") Gagné , vous avez trouvé le juste prix!";
         // Ajouter les classes instruction et moins 
         instruction.className ="instructions fini";
+      
+        input.disabled = true ;
     }
 
    let ajout = instructions.prepend(instruction);
-   console.log(ajout);
-   return ajout;
-
 };
 
 // Etape 2 - Cacher l'erreur

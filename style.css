@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,200;0,300;0,400;1,200&family=Bangers&display=swap');
 html, body {
+  background-image: url('201722.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
     background-color: #262424;
     min-width: 500px;
+    font-family: 'Asap', sans-serif;
+    font-family: 'Bangers', cursive;
+    letter-spacing: 2px;
   }
   
   header {
@@ -23,7 +30,7 @@ html, body {
   }
   
   .moins {
-    background-color: #ffa372;
+    background-color: #72c9ff;
   }
   
   .fini {
