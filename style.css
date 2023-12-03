@@ -1,14 +1,70 @@
 @import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,200;0,300;0,400;1,200&family=Bangers&display=swap');
-html, body {
+/* html, body {
   background-image: url('201722.jpg');
   background-repeat: no-repeat;
   background-size: cover;
     background-color: #262424;
-    min-width: 500px;
+   text-align: center;
+ 
+    height: 100%;
     font-family: 'Asap', sans-serif;
     font-family: 'Bangers', cursive;
     letter-spacing: 2px;
+   */
+
+  html, body { height: 100%; }
+body {
+
+  background:radial-gradient(ellipse at center, rgba(255,254,234,1) 0%, rgba(255,254,234,1) 35%, #B7E8EB 100%);
+  overflow: hidden;
+  font-family: 'Asap', sans-serif;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.ocean { 
+  height: 5%;
+  width:100%;
+  position:absolute;
+  bottom:0;
+  left:0;
+  background: #015871;
+}
+
+.wave {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x; 
+  position: absolute;
+  top: -198px;
+  width: 6400px;
+  height: 198px;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+}
+
+.wave:nth-of-type(2) {
+  top: -175px;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
   }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%, 100% {
+    transform: translate3d(0,-25px,0);
+  }
+  50% {
+    transform: translate3d(0,5px,0);
+  }
+}
   
   header {
     color: #ff7315;
@@ -26,17 +82,73 @@ html, body {
   }
   
   .plus {
-    background-color: #f67280;
+    background-color: linear-gradient( #ffcccc, #ff9999);    padding: 7px;
+    border-radius: 30px;
+    margin-top: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: #bf4073;
   }
   
   .moins {
-    background-color: #72c9ff;
+    background-color:  linear-gradient(skyblue, white) !important;    padding: 7px;
+    color: #015871;
+    border-radius: 30px;
+    margin-top: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
   
   .fini {
     background-color : #0c9463;
+    border-radius: 30px;
+    margin-top: 5px;
   } 
 /* 
   form{
     border-color: red;
   } */
+
+  .illustration {
+    position: relative;
+    margin: 0 auto;
+    width : 716px;
+    height: 413px;
+  }
+   
+  .i-large,
+  .i-medium,
+  .i-small {
+    position : absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+  }
+   
+  .i-large {
+    background: url("./particules_large.png") repeat 0px 0px;
+    -webkit-animation: dropFlowParticles 2s linear infinite;
+         -o-animation: dropFlowParticles 2s linear infinite;
+            animation: dropFlowParticles 2s linear infinite;
+  }
+  .i-medium {
+    background: url("./particules_medium.png") repeat 0px 0px;
+    -webkit-animation: dropFlowParticles 12s linear infinite;
+         -o-animation: dropFlowParticles 12s linear infinite;
+            animation: dropFlowParticles 12s linear infinite;
+  }
+  .i-small {
+    background:url("./particules_small.png") repeat 0px 0px;
+    -webkit-animation: dropFlowParticles 27s linear infinite;
+         -o-animation: dropFlowParticles 27s linear infinite;
+            animation: dropFlowParticles 27s linear infinite;
+  }
+   
+  @-webkit-keyframes dropFlowParticles {
+    from { background-position: 0 0; }
+    to { background-position: 0 413px; }
+  }
+  @keyframes dropFlowParticles {
+    from { background-position: 0 0; }
+    to { background-position: 0 413px; }
+  }
+
+  .bg-light {
+    background-color: #76b59d54!important;
+}

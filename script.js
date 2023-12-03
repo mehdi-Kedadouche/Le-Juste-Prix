@@ -38,6 +38,8 @@ function verifier(nombre) {
         instruction.className ="instructions fini";
       
         input.disabled = true ;
+
+        
     }
 
    let ajout = instructions.prepend(instruction);
