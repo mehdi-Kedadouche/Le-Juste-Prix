@@ -67,9 +67,10 @@ body {
 }
   
   header {
-    color: #ff7315;
+    color: #ffc107;
     text-align: center;
-    font-size: 3em;
+    font-size: 4em;
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
   }
   
   #instructions {
@@ -98,9 +99,10 @@ body {
   }
   
   .fini {
-    background-color : #0c9463;
+    background-color: #0c9463;
     border-radius: 30px;
     margin-top: 5px;
+    box-shadow: -1px 5px 5px #35dc5b;
   } 
 /* 
   form{
@@ -151,4 +153,29 @@ body {
 
   .bg-light {
     background-color: #76b59d54!important;
+}
+
+
+
+
+
+.feux-dartifice {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background:linear-gradient(45deg, yellow, orange, red, yellow);
+  color: #ffc107;
+  border-radius: 50%;
+  animation: burst 1s ease-out;
+}
+
+@keyframes burst {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
 }

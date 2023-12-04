@@ -11,6 +11,30 @@ let nombreChoisi;
 // Etape 3 - Générer un nombre aléatoire entre 0 et 1000
 let randomNumber = Math.floor(Math.random() * 1001);
 console.log(randomNumber);
+
+function jouerFeuxDartifice() {
+    // Créer un certain nombre de feux d'artifice
+    for (let i = 0; i < 50; i++) {
+      // Créez des éléments pour représenter les feux d'artifice
+      let feuxDartifice = document.createElement('div');
+      feuxDartifice.textContent = "Congrats !"
+      feuxDartifice.className = 'feux-dartifice';
+  
+      // Positionnez-les aléatoirement sur la page
+      feuxDartifice.style.left = Math.random() * window.innerWidth + 'px';
+      feuxDartifice.style.top = Math.random() * window.innerHeight + 'px';
+  
+      // Ajoutez ces éléments à la page
+      document.body.appendChild(feuxDartifice);
+  
+      // Supprimez les feux d'artifice après un certain délai (par exemple, 1 seconde)
+      setTimeout(() => {
+        feuxDartifice.remove();
+      }, 2000); // Délai en millisecondes
+  
+    }
+  }
+
 // Etape 6 - Créer la fonction vérifier
 function verifier(nombre) {
 
@@ -39,7 +63,8 @@ function verifier(nombre) {
       
         input.disabled = true ;
 
-        
+          // Lancez l'animation des feux d'artifice
+        jouerFeuxDartifice();
     }
 
    let ajout = instructions.prepend(instruction);
@@ -73,4 +98,12 @@ formulaire.addEventListener('submit', (e) => {
         verifier(nombreChoisi);
     }
 })
+
+// Sélectionner le bouton Restart
+let restartButton = document.querySelector('#restartButton');
+
+// Ajouter un gestionnaire d'événements pour actualiser la page lors du clic
+restartButton.addEventListener('click', () => {
+  window.location.reload();
+});
 
